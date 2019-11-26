@@ -1,0 +1,16 @@
+>mongo
+>show dbs
+>use inventory
+>db.createCollection('item')
+>db.item.insert({itemName:"planner",tag:["wash","food","vehicle"],status:"A",height:5,width:9,instack:15,warehouse:[{location:"pune",quntity:36},{location:"mumbai",quntity:67}]})
+>db.item.insert({itemName:"toycar",tag:["food","vehicle"],status:"D",height:5,width:9,instack:15,warehouse:[{location:"pune",quntity:36},{location:"mumbai",quntity:67}]})
+>db.item.insert({itemName:"roboticcar",tag:["food","vehicle"],status:"A",height:9,width:9,instack:5,warehouse:[{location:"pune",quntity:26},{location:"mumbai",quntity:17}]})
+>db.item.insert({itemName:"bag",tag:["food","vehicle","school","travel"],status:"c",height:19,width:39,instack:75,warehouse:[{location:"surat",quntity:26},{location:"lanavala",quntity:17}]})
+
+
+4)
+a) > db.item.find({status:"D","warehouse.quntity":{$gt:30}})
+b) > db.item.find({"tag":{$size:3}})
+c) >
+db.item.find({$or:[{status:"A"},{"warehouse.quntity":{$lt:30},height:{$gt:10}}]})
+d) > db.item.find({itemName:"planner",instack:{$lt:20}})
